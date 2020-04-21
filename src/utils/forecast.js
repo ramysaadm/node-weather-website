@@ -13,15 +13,13 @@ const forecast = (lat, lon, callback) => {
             callback('Unable to find forecast for the provided coordinates location. Please enter another location!', undefined)
         } else {
             callback(undefined, {
-                forecast: `${body.weather[0].description.charAt(0).toUpperCase() + 
+                forecast: `${body.weather[0].description.
+                    charAt(0).toUpperCase() + 
                     body.weather[0].description.slice(1)}. 
-                    Temperature is ${
-                    (body.main.temp - 273).toFixed(1)} degrees out. 
-                    It feels like ${
-                        (body.main.feels_like - 273).toFixed(1)
-                    } degrees.
-                    The maximum temperature is ${(body.main.temp_max - 273).toFixed(1)} and the minimum is ${(
-                        body.main.temp_min - 273).toFixed(1)}. 
+                    Temperature is ${(body.main.temp - 273).toFixed(1)} degrees out. 
+                    It feels like ${(body.main.feels_like - 273).toFixed(1)} degrees.
+                    The maximum temperature is ${(body.main.temp_max - 273).toFixed(1)} 
+                    and the minimum is ${(body.main.temp_min - 273).toFixed(1)}. 
                     The humidity is ${body.main.humidity}%.`
 
 
